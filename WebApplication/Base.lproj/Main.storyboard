@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ReY-iH-jTb">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web Browser-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKW-B8-7Ux">
+                                <rect key="frame" x="0.0" y="96" width="414" height="640"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8sZ-Zh-db7">
+                                <rect key="frame" x="187" y="348" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="O3z-aD-X3F"/>
+                                    <constraint firstAttribute="width" constant="40" id="jU4-vM-fiJ"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uKW-B8-7Ux" secondAttribute="trailing" id="C8G-8d-9qL"/>
+                            <constraint firstItem="8sZ-Zh-db7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SCI-4K-HZ9"/>
+                            <constraint firstItem="uKW-B8-7Ux" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VGF-kS-qPL"/>
+                            <constraint firstItem="uKW-B8-7Ux" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fla-LF-RSf"/>
+                            <constraint firstItem="8sZ-Zh-db7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kum-11-laB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uKW-B8-7Ux" secondAttribute="bottom" id="mhO-J4-hKM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Web Browser" id="GxF-XI-GHj">
+                        <leftBarButtonItems>
+                            <barButtonItem image="arrowshape.turn.up.left.fill" catalog="system" id="L57-AQ-apo">
+                                <color key="tintColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="goBack:" destination="BYZ-38-t0r" id="DJc-uz-elR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="arrowshape.turn.up.right.fill" catalog="system" id="0Mk-JU-Gw2">
+                                <color key="tintColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="goAnother:" destination="BYZ-38-t0r" id="6nU-Cw-SLv"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="qEj-fC-4B2">
+                            <color key="tintColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onRefresh:" destination="BYZ-38-t0r" id="M4E-Km-LBo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backItem" destination="L57-AQ-apo" id="7Pu-Ds-6Ol"/>
+                        <outlet property="goItem" destination="0Mk-JU-Gw2" id="hxi-Vn-8pM"/>
+                        <outlet property="indicatorView" destination="8sZ-Zh-db7" id="qwR-8P-62J"/>
+                        <outlet property="refreshItem" destination="qEj-fC-4B2" id="SYB-RH-dfJ"/>
+                        <outlet property="webView" destination="uKW-B8-7Ux" id="5FA-q9-kZU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.10144927536237" y="55.580357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZMZ-cM-B3r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ReY-iH-jTb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="zEs-Wc-rfI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tjj-mH-JoO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7d-uj-SdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13.043478260869566" y="55.580357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
